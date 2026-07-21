@@ -33,44 +33,56 @@ Do this a few days early so your account is ready.
 
 ## During the workshop: get onto Frontera
 
-We use the **TACC Analysis Portal (TAP)** to open Jupyter directly on a Frontera compute node,
-right in your browser.
+Everything happens in your web browser. You will **not** use a command line.
 
-### Step 1 — Open the portal
+There are three steps: download the notebook, start Jupyter on Frontera, upload the notebook.
+
+### Step 1 — Download the notebook
+
+Go to the notebook file on GitHub:
+
+**[intro-to-python-and-hpc.ipynb](https://github.com/ashleyscruse/pfx-hpc/blob/main/notebooks/intro-to-python-and-hpc.ipynb)**
+
+Click the **download icon** (the downward arrow, top right of the file view) to save
+`intro-to-python-and-hpc.ipynb` to your computer. Remember where it saved, usually your
+**Downloads** folder.
+
+> If the file opens as a page of text instead of downloading, right-click the download button
+> and choose **Save Link As**.
+
+### Step 2 — Start a Jupyter session on Frontera
 
 Go to **[tap.tacc.utexas.edu](https://tap.tacc.utexas.edu)** and log in with your TACC
 username, password, and MFA code.
 
-### Step 2 — Start a Jupyter session
-
-Fill in the session form:
+Fill in the session form exactly like this:
 
 | Field | Choose |
 |-------|--------|
 | System | **Frontera** |
 | Application | **Jupyter Notebook** |
-| Project | your **CBPC allocation** (pick it from the list) |
-| Queue | **development** |
+| Project | **TRA25001** |
+| Queue | **normal** |
+| Reservation | **Morehouse** |
 | Nodes | **1** |
 | Time | **2 hours** |
 
-Click **Submit**, then wait for the job to start and click **Connect**.
+Click **Submit**. Wait for the job to start, then click **Connect**.
+
+> **Use the reservation.** Our reservation is named **Morehouse** and it is active
+> **Tuesday, July 21, 7:00 AM to 1:00 PM (Central)**. It holds nodes aside just for our group, so
+> your session starts right away instead of waiting in line. If you forget it, you may wait a long time.
 
 > The notebook that opens is running on a real Frontera compute node. You're on the supercomputer.
 
-### Step 3 — Get the notebook
+### Step 3 — Upload the notebook
 
-In your Jupyter session, open a terminal (**New → Terminal**) and run:
+You now have Jupyter open in your browser, but it's empty. Put your downloaded file on Frontera:
 
-```bash
-git clone https://github.com/ashleyscruse/pfx-hpc.git
-```
-
-Then, in the file browser, open:
-
-```
-pfx-hpc/notebooks/intro-to-python-and-hpc.ipynb
-```
+1. In the Jupyter file browser, click the **Upload** button (top right).
+2. Choose the `intro-to-python-and-hpc.ipynb` file you downloaded in Step 1.
+3. Click the blue **Upload** button that appears next to the file name to confirm.
+4. Click the file name to open it.
 
 ### Step 4 — Run it
 

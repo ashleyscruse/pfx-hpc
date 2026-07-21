@@ -24,20 +24,30 @@ No prior coding or HPC experience required.
 
 Setup instructions live on the workshop site: **https://ashleyscruse.github.io/pfx-hpc/**
 
-Short version: request a CBPC account, log into [tap.tacc.utexas.edu](https://tap.tacc.utexas.edu),
-start a **Jupyter Notebook** session on **Frontera**, then in a Jupyter terminal run:
+Everything is browser-based. **No command line.** Short version:
 
-```bash
-git clone https://github.com/ashleyscruse/pfx-hpc.git
-```
+1. Download `notebooks/intro-to-python-and-hpc.ipynb` from this repo.
+2. Log into [tap.tacc.utexas.edu](https://tap.tacc.utexas.edu) and start a **Jupyter Notebook**
+   session on **Frontera** using the reservation below.
+3. **Upload** the downloaded notebook in the Jupyter file browser and open it.
 
-and open `pfx-hpc/notebooks/intro-to-python-and-hpc.ipynb`.
+## Reservation
+
+| Field | Value |
+|-------|-------|
+| Reservation | `Morehouse` |
+| Account | `TRA25001` |
+| Partition | `normal` |
+| Window | 2026-07-21, 07:00-13:00 Central |
+| Capacity | 250 nodes / 14,000 cores |
 
 ## Notes for facilitators
 
 - TAP launches the notebook inside a Slurm job on a compute node, so the parallel demo
-  (`multiprocessing.Pool`) uses the cores that session already holds. Request enough cores.
-- Job submission (`sbatch`) is not done from the notebook; it happens from a login-node
-  terminal. The notebook only runs read-only Slurm commands (`squeue`).
+  (`multiprocessing.Pool`) uses the cores that session already holds.
+- Students never touch a terminal. The notebook's only shell calls are read-only cells
+  (`hostname`, `echo $SCRATCH`, `squeue`) run with `!` from inside Jupyter.
+- Job submission (`sbatch`) is not possible from the notebook; it happens from a login node.
+  Part 4 shows Slurm commands as vocabulary only, not as something students run.
 - Time-test Part 3's prime tasks on the actual node and adjust the workload so the serial run
   lands around 15-20 seconds for a satisfying contrast with the parallel run.
