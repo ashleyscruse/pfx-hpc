@@ -20,7 +20,8 @@ A supercomputer is not one giant computer. It's thousands of ordinary computers,
 **nodes**, wired together so they can work on the same problem at the same time.
 
 Frontera has **8,368 nodes**. Each node has **56 processor cores** and **192 GB of memory**,
-which adds up to **468,608 cores**. Your laptop probably has somewhere between 4 and 10.
+which adds up to **468,608 cores**, and for this workshop 250 of those nodes are reserved just
+for our group.
 
 That's the whole idea behind high-performance computing: if you can split a job into pieces,
 many cores can chew through those pieces simultaneously and finish far sooner than one core
@@ -164,12 +165,13 @@ Three things worth knowing:
 |------|----------------|
 | 1. Where am I? | Print the machine's name and core count, and confirm you're on Frontera |
 | 2. Python basics | Variables, math, text, lists, loops, `if` decisions, and functions |
-| 3. Many cores at once | Run the same job on 1 core, then 8, and time the difference |
+| 3. Many cores at once | Edit a batch of photos, then model thousands of epidemics, on 1 core vs. all 56 |
 | 4. The rest of Frontera | Nodes, storage, software modules, and how jobs get scheduled |
 | 5. Wrap-up | A challenge to try on your own |
 
-Part 3 is the one to slow down for. You'll run a real computation the slow way, then split it
-across 8 cores and watch the clock. That gap is the entire reason machines like Frontera exist.
+Part 3 is the one to slow down for. You'll run real jobs the slow way on one core, then across
+all 56 cores of your node, and watch the clock. That gap, and the fact that Frontera has 8,368
+of these nodes, is the entire reason machines like it exist.
 
 ---
 

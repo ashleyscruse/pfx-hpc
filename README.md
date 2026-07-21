@@ -14,8 +14,8 @@ That page walks you through the whole thing, step by step. The short version is 
 
 - How to write Python: variables, math, text, lists, loops, decisions, and functions
 - What a supercomputer actually is: 8,368 nodes, 56 cores each, 468,608 cores in total
-- Why using many cores at once matters, by running the same job on 1 core and then on 8 and
-  timing both
+- Why using many cores at once matters, by editing a batch of photos and modeling thousands of
+  epidemics on 1 core and then on all 56, and timing both
 - How work gets scheduled on a machine shared by thousands of researchers
 
 ## The short version
@@ -59,14 +59,21 @@ pick whichever project you have access to.
 <details>
 <summary>Notes for instructors</summary>
 
-- TAP launches the notebook inside a Slurm job on a compute node, so the Part 3 demo
-  (`multiprocessing.Pool`) uses the cores that session already holds.
+- Requires `numpy` and `matplotlib` in the TAP Jupyter kernel (both are in TACC's `python3`).
+  Verify before the session; the photo before/after and the epidemic heatmap need matplotlib.
+- Part 3 runs each job on 1 core, then on `os.cpu_count()` (56 on a Frontera node), via
+  `multiprocessing.Pool` with the `fork` start method so cell-defined functions parallelize.
+  This is single-node; it does not span the reserved nodes (that would need MPI/Dask + a batch job).
+- Two tunable slots control the serial runtime: `NUM_PHOTOS` (default 500) and `GRID` (default
+  400 => 160,000 scenarios). On a real node, size them so the 1-core run is ~10-15 s: felt, but
+  not dead air. Frontera's single core is slower than a modern laptop's, so start there and adjust.
+- The examples are framed as media/everyday (photo editing) and public health (epidemic
+  parameter sweep). Every timing comparison is 1-vs-many cores on Frontera itself, so the numbers
+  stay honest even against a high-end laptop.
 - Students never open a terminal. The notebook's only shell calls are read-only cells
   (`hostname`, `echo $SCRATCH`, `squeue`) run with `!` from inside Jupyter.
 - `sbatch` submission isn't possible from the notebook; it happens from a login node. Part 4
   presents Slurm commands as vocabulary only.
-- Time-test Part 3's prime workload on a real node and adjust it so the serial run lands around
-  15-20 seconds, which makes the parallel contrast land.
-- Suggested hour: ~12 min slides, ~35 min notebook, ~10 min questions.
+- Suggested hour: ~10 min slides, ~40 min notebook, ~10 min questions.
 
 </details>
