@@ -165,7 +165,7 @@ Three things worth knowing:
 |------|----------------|
 | 1. Where am I? | Print the machine's name and core count, and confirm you're on Frontera |
 | 2. Python basics | Variables, math, text, lists, loops, `if` decisions, and functions |
-| 3. Many cores at once | Edit a batch of photos, then model thousands of epidemics, on 1 core vs. all 56 |
+| 3. Many cores at once | Analyze millions of health records, then model thousands of epidemics, on 1 core vs. all 56 |
 | 4. The rest of Frontera | Nodes, storage, software modules, and how jobs get scheduled |
 | 5. Wrap-up | A challenge to try on your own |
 
