@@ -6,8 +6,11 @@ title: PFX Python & HPC
 # Intro to Python & Supercomputing
 
 A one-hour workshop for the **PFX Pre-Freshman Program**. You will write real Python and run
-it on **Frontera**, one of the fastest academic supercomputers in the world, at the Texas
-Advanced Computing Center (TACC).
+it on **Frontera**, a research supercomputer at the Texas Advanced Computing Center (TACC)
+in Austin, Texas.
+
+Frontera has **8,368 compute nodes**, each with **56 processor cores** and **192 GB of
+memory**, for a total of **468,608 cores**. Your laptop has roughly 4 to 10.
 
 No prior coding or HPC experience required.
 
