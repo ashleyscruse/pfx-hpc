@@ -1,0 +1,91 @@
+---
+layout: default
+title: PFX Python & HPC
+---
+
+# Intro to Python & Supercomputing
+
+A one-hour workshop for the **PFX Pre-Freshman Program**. You will write real Python and run
+it on **Frontera**, one of the fastest academic supercomputers in the world, at the Texas
+Advanced Computing Center (TACC).
+
+No prior coding or HPC experience required.
+
+**What you'll do today:**
+- Prove you're running on a real supercomputer
+- Learn the Python you'll use constantly: variables, math, text, lists, loops, decisions, functions
+- Make many processor cores work at the same time and measure the speedup
+- Meet the core ideas of high-performance computing
+
+---
+
+## Before the workshop: get an account
+
+You need a TACC account with access to the CBPC computing resources.
+
+1. Go to the [CBPC HPC Resources page](https://www.bpccenter.org/current-programs/cbpc-hpc-resources).
+2. Click **Request Access** and complete the short form.
+3. Watch your email for your TACC account details and set up **Multi-Factor Authentication (MFA)**.
+
+Do this a few days early so your account is ready.
+
+---
+
+## During the workshop: get onto Frontera
+
+We use the **TACC Analysis Portal (TAP)** to open Jupyter directly on a Frontera compute node,
+right in your browser.
+
+### Step 1 — Open the portal
+
+Go to **[tap.tacc.utexas.edu](https://tap.tacc.utexas.edu)** and log in with your TACC
+username, password, and MFA code.
+
+### Step 2 — Start a Jupyter session
+
+Fill in the session form:
+
+| Field | Choose |
+|-------|--------|
+| System | **Frontera** |
+| Application | **Jupyter Notebook** |
+| Project | your **CBPC allocation** (pick it from the list) |
+| Queue | **development** |
+| Nodes | **1** |
+| Time | **2 hours** |
+
+Click **Submit**, then wait for the job to start and click **Connect**.
+
+> The notebook that opens is running on a real Frontera compute node. You're on the supercomputer.
+
+### Step 3 — Get the notebook
+
+In your Jupyter session, open a terminal (**New → Terminal**) and run:
+
+```bash
+git clone https://github.com/ashleyscruse/pfx-hpc.git
+```
+
+Then, in the file browser, open:
+
+```
+pfx-hpc/notebooks/intro-to-python-and-hpc.ipynb
+```
+
+### Step 4 — Run it
+
+Click a cell and press **Shift + Enter** to run it. Go top to bottom. Change things, break
+things, re-run them. That's how you learn.
+
+---
+
+## Materials
+
+- **[Notebook: Intro to Python & HPC](https://github.com/ashleyscruse/pfx-hpc/blob/main/notebooks/intro-to-python-and-hpc.ipynb)**
+- **[Slides (PPTX)](https://github.com/ashleyscruse/pfx-hpc/raw/main/slides/pfx-hpc-slides.pptx)**
+
+## Keep going
+
+- [Frontera user guide](https://docs.tacc.utexas.edu/hpc/frontera/)
+- [TACC Analysis Portal](https://tap.tacc.utexas.edu)
+- [Python.org](https://www.python.org) &middot; [W3Schools Python](https://www.w3schools.com/python/)

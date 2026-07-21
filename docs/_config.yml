@@ -1,0 +1,8 @@
+title: PFX Python & HPC
+description: A 1-hour intro to Python and supercomputing on Frontera for the PFX Pre-Freshman Program
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+  - jekyll-remote-theme
+
+exclude:
+  - README.md
