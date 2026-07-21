@@ -1,53 +1,72 @@
-# PFX Python & HPC
+# Intro to Python & Supercomputing
 
-A one-hour introduction to Python and supercomputing for the **PFX Pre-Freshman Program**.
-Students write Python and run it on **Frontera** at TACC via the **TACC Analysis Portal (TAP)**.
+Welcome. This is a self-guided, one-hour tutorial where you'll write real Python and run it on
+**Frontera**, a research supercomputer at the Texas Advanced Computing Center (TACC).
 
-No prior coding or HPC experience required.
+You don't need any coding experience, and you'll never touch a command line. Everything happens
+in your web browser.
 
-## Contents
+**Start here: [ashleyscruse.github.io/pfx-hpc](https://ashleyscruse.github.io/pfx-hpc/)**
 
-| Path | What it is |
-|------|-----------|
-| `notebooks/intro-to-python-and-hpc.ipynb` | The hands-on notebook students run on Frontera |
-| `slides/pfx-hpc-slides.pptx` | ~10 opening slides (Morehouse brand) |
-| `docs/` | The workshop website (GitHub Pages) with setup instructions |
+That page walks you through the whole thing, step by step. The short version is below.
 
-## The hour
+## What you'll learn
 
-1. **Slides (~12 min)** set the stage: what Frontera is, what it's used for, and why it matters.
-2. **Notebook (~35 min)**: Python basics, then a live parallel-computing demo that measures the
-   speedup from using many cores at once.
-3. **Q&A (~10 min).**
+- How to write Python: variables, math, text, lists, loops, decisions, and functions
+- What a supercomputer actually is: 8,368 nodes, 56 cores each, 468,608 cores in total
+- Why using many cores at once matters, by running the same job on 1 core and then on 8 and
+  timing both
+- How work gets scheduled on a machine shared by thousands of researchers
 
-## For students
+## The short version
 
-Setup instructions live on the workshop site: **https://ashleyscruse.github.io/pfx-hpc/**
+1. **Get an account.** Request access on the
+   [CBPC HPC Resources page](https://www.bpccenter.org/current-programs/cbpc-hpc-resources) and set
+   up Multi-Factor Authentication. Do this a few days early.
+2. **Download the notebook:** [`notebooks/intro-to-python-and-hpc.ipynb`](notebooks/intro-to-python-and-hpc.ipynb).
+   Click the download icon on that page.
+3. **Start Jupyter.** Log into [tap.tacc.utexas.edu](https://tap.tacc.utexas.edu) and launch a
+   **Jupyter Notebook** session on **Frontera**.
+4. **Upload and run.** Click **Upload** in the Jupyter file browser, choose your downloaded
+   file, open it, and press `Shift` + `Enter` to run each cell.
 
-Everything is browser-based. **No command line.** Short version:
+If any step is unclear, the [full tutorial](https://ashleyscruse.github.io/pfx-hpc/) explains
+what to expect at each point and what to do when something goes wrong.
 
-1. Download `notebooks/intro-to-python-and-hpc.ipynb` from this repo.
-2. Log into [tap.tacc.utexas.edu](https://tap.tacc.utexas.edu) and start a **Jupyter Notebook**
-   session on **Frontera** using the reservation below.
-3. **Upload** the downloaded notebook in the Jupyter file browser and open it.
+## Doing this during the PFX workshop?
 
-## Reservation
+Use these settings when you start your session, so you skip the queue:
 
 | Field | Value |
 |-------|-------|
+| Project | `TRA25001` |
+| Queue | `normal` |
 | Reservation | `Morehouse` |
-| Account | `TRA25001` |
-| Partition | `normal` |
-| Window | 2026-07-21, 07:00-13:00 Central |
-| Capacity | 250 nodes / 14,000 cores |
 
-## Notes for facilitators
+The reservation is active **Tuesday, July 21, 7:00 AM to 1:00 PM Central**.
 
-- TAP launches the notebook inside a Slurm job on a compute node, so the parallel demo
+**Doing this on your own afterward?** Leave Reservation blank, use the `development` queue, and
+pick whichever project you have access to.
+
+## What's in this repo
+
+- `notebooks/intro-to-python-and-hpc.ipynb` — the tutorial notebook you'll run
+- `slides/pfx-hpc-slides.pptx` — the opening slides
+- `docs/` — the tutorial website
+
+---
+
+<details>
+<summary>Notes for instructors</summary>
+
+- TAP launches the notebook inside a Slurm job on a compute node, so the Part 3 demo
   (`multiprocessing.Pool`) uses the cores that session already holds.
-- Students never touch a terminal. The notebook's only shell calls are read-only cells
+- Students never open a terminal. The notebook's only shell calls are read-only cells
   (`hostname`, `echo $SCRATCH`, `squeue`) run with `!` from inside Jupyter.
-- Job submission (`sbatch`) is not possible from the notebook; it happens from a login node.
-  Part 4 shows Slurm commands as vocabulary only, not as something students run.
-- Time-test Part 3's prime tasks on the actual node and adjust the workload so the serial run
-  lands around 15-20 seconds for a satisfying contrast with the parallel run.
+- `sbatch` submission isn't possible from the notebook; it happens from a login node. Part 4
+  presents Slurm commands as vocabulary only.
+- Time-test Part 3's prime workload on a real node and adjust it so the serial run lands around
+  15-20 seconds, which makes the parallel contrast land.
+- Suggested hour: ~12 min slides, ~35 min notebook, ~10 min questions.
+
+</details>
