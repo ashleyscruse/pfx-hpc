@@ -95,14 +95,18 @@ Now fill out the session form:
 | Project | **TRA25001** |
 | Queue | **normal** |
 | Reservation | **Morehouse** |
-| Nodes | **1** |
+| Nodes | **3** |
+| Tasks | **3** |
 | Time | **2 hours** |
+
+> The `normal` queue has a **3-node, 3-task minimum**, so use 3 even though the notebook only
+> uses one of them. It costs nothing extra: our reservation has plenty of nodes.
 
 Click **Submit**.
 
-**What's happening:** you just asked Frontera for one of its 8,368 nodes. Your request goes
-into a line called a **queue**, and a program called the **scheduler** hands you a node when
-one is free. This is how a machine shared by thousands of researchers stays fair.
+**What's happening:** you just asked Frontera for some of its 8,368 nodes. Your request goes
+into a line called a **queue**, and a program called the **scheduler** hands you nodes when
+they're free. This is how a machine shared by thousands of researchers stays fair.
 
 Wait for the status to change, then click **Connect**. Jupyter opens in your browser.
 

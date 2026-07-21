@@ -42,8 +42,11 @@ Use these settings when you start your session, so you skip the queue:
 | Project | `TRA25001` |
 | Queue | `normal` |
 | Reservation | `Morehouse` |
+| Nodes | `3` |
+| Tasks | `3` |
 
-The reservation is active **Tuesday, July 21, 7:00 AM to 1:00 PM Central**.
+The reservation is active **Tuesday, July 21, 7:00 AM to 1:00 PM Central**. The `normal` queue
+has a 3-node, 3-task minimum, so request 3 even though the notebook only uses one node.
 
 **Doing this on your own afterward?** Leave Reservation blank, use the `development` queue, and
 pick whichever project you have access to.
